@@ -31,10 +31,7 @@ const seedAdmin = async () => {
   } catch (error) {
     console.error('❌ Seeding failed:', error.message);
   } finally {
-    if (process.env.NODE_ENV !== 'production') {
-  await mongoose.disconnect();
-  process.exit(0);
-}
+      await mongoose.disconnect();
   }
 };
 
