@@ -11,7 +11,7 @@ const seedAdmin = async () => {
 
     if (existingAdmin) {
       console.log('ℹ️  Admin already exists. Skipping seed.');
-      process.exit(0);
+      return;
     }
 
     const admin = await User.create({

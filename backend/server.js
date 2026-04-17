@@ -14,9 +14,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // ─── Connect Database ──────────────────────────────────────────────────────────
-connectDB().then(() => {
+connectDB().then(async () => {
   if (process.env.NODE_ENV === 'production') {
-    seedAdmin();
+    await seedAdmin();
   }
 });
 
