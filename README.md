@@ -236,8 +236,6 @@ Role:     Admin
    REACT_APP_API_URL=https://your-backend.onrender.com/api
    ```
 5. Deploy!
-
-### Frontend → Netlify
 ## 🔒 Security Features
 
 - **bcrypt** password hashing (12 salt rounds)
