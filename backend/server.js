@@ -1,4 +1,4 @@
-app.set('trust proxy', 1);
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -12,6 +12,7 @@ const userRoutes = require('./routes/user.routes');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
 const seedAdmin = require('./utils/seeder');
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 5000;
 
 // ─── Connect Database ──────────────────────────────────────────────────────────
