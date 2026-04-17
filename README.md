@@ -2,6 +2,9 @@
 
 A production-ready full-stack User Management System built with the MERN stack, featuring JWT authentication and role-based access control (RBAC).
 
+Frontend: https://user-management-system-rfq7.vercel.app  
+Backend: https://user-management-system-qoag.onrender.com
+
 ---
 
 ## 📁 Project Structure
@@ -216,10 +219,10 @@ Role:     Admin
    MONGODB_URI=<your MongoDB Atlas URI>
    JWT_SECRET=<strong random secret>
    JWT_REFRESH_SECRET=<another random secret>
-   CLIENT_URL=https://your-frontend.vercel.app
+   CLIENT_URL=https://user-management-system-rfq7.vercel.app
    PORT=5000
    BCRYPT_SALT_ROUNDS=12
-6. Deploy. Note your backend URL: `https://your-app.onrender.com`
+6. Deploy. Note your backend URL: `https://user-management-system-qoag.onrender.com`
 7. Seed admin via Render Shell: `npm run seed`
 
 ### Frontend → Vercel
@@ -233,7 +236,7 @@ Role:     Admin
    - **Output Directory:** `build`
 4. Add Environment Variables:
    ```
-   REACT_APP_API_URL=https://your-backend.onrender.com/api
+   REACT_APP_API_URL=Backend: https://user-management-system-qoag.onrender.com/api
    ```
 5. Deploy!
 ## 🔒 Security Features
