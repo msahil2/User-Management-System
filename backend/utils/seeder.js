@@ -1,10 +1,9 @@
 require('dotenv').config();
-const mongoose = require('mongoose');
+
 const { User, ROLES } = require('../models/User');
-const connectDB = require('../config/db');
+
 
 const seedAdmin = async () => {
-  await connectDB();
 
   try {
     const existingAdmin = await User.findOne({ email: 'admin@example.com' });
@@ -30,8 +29,6 @@ const seedAdmin = async () => {
 
   } catch (error) {
     console.error('❌ Seeding failed:', error.message);
-  } finally {
-      await mongoose.disconnect();
   }
 };
 
