@@ -157,26 +157,14 @@ user-management-system/
 ```bash
 # 1. Navigate to backend
 cd user-management-system/backend
-
 # 2. Install dependencies
 npm install
-
 # 3. Create environment file
 cp .env.example .env
-
-# 4. Edit .env with your values:
-#    MONGODB_URI=mongodb://localhost:27017/user_management_db
-#    JWT_SECRET=<generate with: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))">
-#    JWT_REFRESH_SECRET=<another random 32-byte hex>
-#    CLIENT_URL=http://localhost:3000
-
 # 5. Seed the admin user
 npm run seed
-
 # 6. Start development server
 npm run dev
-# → Runs on http://localhost:5000
-
 # Production start
 npm start
 ```
@@ -188,18 +176,12 @@ npm start
 ```bash
 # 1. Navigate to frontend
 cd user-management-system/frontend
-
 # 2. Install dependencies
 npm install
-
 # 3. Create environment file
 cp .env.example .env
-# REACT_APP_API_URL=http://localhost:5000/api
-
 # 4. Start development server
 npm start
-# → Runs on http://localhost:3000
-
 # Production build
 npm run build
 ```
@@ -237,24 +219,8 @@ Role:     Admin
    CLIENT_URL=https://your-frontend.vercel.app
    PORT=5000
    BCRYPT_SALT_ROUNDS=12
-   ```
 6. Deploy. Note your backend URL: `https://your-app.onrender.com`
 7. Seed admin via Render Shell: `npm run seed`
-
-### Backend → Railway
-
-1. Go to [railway.app](https://railway.app) → New Project
-2. Deploy from GitHub or use Railway CLI:
-   ```bash
-   npm install -g @railway/cli
-   railway login
-   railway init
-   railway up
-   ```
-3. Add environment variables in Railway dashboard
-4. MongoDB: Add a MongoDB plugin directly in Railway, or use Atlas
-
----
 
 ### Frontend → Vercel
 
@@ -272,21 +238,6 @@ Role:     Admin
 5. Deploy!
 
 ### Frontend → Netlify
-
-1. Go to [netlify.com](https://netlify.com) → New Site → Import from Git
-2. Configure:
-   - **Base directory:** `frontend`
-   - **Build command:** `npm run build`
-   - **Publish directory:** `frontend/build`
-3. Add environment variable: `REACT_APP_API_URL`
-4. Add a `_redirects` file in `frontend/public/`:
-   ```
-   /* /index.html 200
-   ```
-   (Required for React Router client-side routing)
-
----
-
 ## 🔒 Security Features
 
 - **bcrypt** password hashing (12 salt rounds)
