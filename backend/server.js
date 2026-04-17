@@ -9,12 +9,16 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
-
+const seedAdmin = require('./utils/seeder');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 // ─── Connect Database ──────────────────────────────────────────────────────────
-connectDB();
+connectDB().then(() => {
+  if (process.env.NODE_ENV === 'production') {
+    seedAdmin();
+  }
+});
 
 // ─── Security Middleware ───────────────────────────────────────────────────────
 app.use(helmet());
